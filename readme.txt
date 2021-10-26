@@ -35,6 +35,9 @@ iknowledgebase WordPress Theme, Copyright 2021 Wow-Company & Dmytro Lobov
 iknowledgebase is distributed under the terms of the GNU GPL
 
 == Changelog ==
+= 1.1.2 =
+* Fixed category loop
+
 = 1.1.1 =
 * Added: Sticky Post in categories
 * Fixed: minor bugs
