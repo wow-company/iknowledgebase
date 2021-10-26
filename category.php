@@ -27,17 +27,9 @@ $iknowledgebase_settings = get_option( 'iknowledgebase_settings', false );
                         <div class="panel has-background-white">
 							<?php
 
-							// Load posts loop sticky posts.
-							$sticky_query = new WP_Query( array( 'post__in' => get_option( 'sticky_posts' ) ) );
-							while ($sticky_query->have_posts()) {
-								$sticky_query->the_post();
-								get_template_part( 'template-parts/content', 'sticky-list' );
-							}
-
-							// Load posts loop without sticky posts.
-							$non_sticky_query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_posts' ) ) );
-							while ( $non_sticky_query->have_posts() ) {
-								$non_sticky_query->the_post();
+							// Load posts loop.
+							while ( have_posts() ) {
+								the_post();
 								get_template_part( 'template-parts/content', 'list' );
 							}
 							?>
@@ -65,18 +57,9 @@ $iknowledgebase_settings = get_option( 'iknowledgebase_settings', false );
                     <div class="panel has-background-white">
                         <p class="panel-heading"><?php the_archive_title(); ?></p>
 						<?php
-
-						// Load posts loop sticky posts.
-						$sticky_query = new WP_Query( array( 'post__in' => get_option( 'sticky_posts' ) ) );
-						while ($sticky_query->have_posts()) {
-							$sticky_query->the_post();
-							get_template_part( 'template-parts/content', 'sticky-list' );
-						}
-
-						// Load posts loop without sticky posts.
-						$non_sticky_query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_posts' ) ) );
-						while ( $non_sticky_query->have_posts() ) {
-							$non_sticky_query->the_post();
+						// Load posts loop.
+						while ( have_posts() ) {
+							the_post();
 							get_template_part( 'template-parts/content', 'list' );
 						}
 						?>

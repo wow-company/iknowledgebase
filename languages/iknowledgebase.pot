@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: IKnowledgeBase\n"
-"POT-Creation-Date: 2021-10-25 16:43+0300\n"
+"POT-Creation-Date: 2021-10-26 11:20+0300\n"
 "PO-Revision-Date: 2021-10-25 16:43+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Your email address will not be published."
 msgstr ""
 
-#: comments.php:45 includes/customizer.php:82 includes/customizer.php:374
+#: comments.php:45 includes/customizer.php:82 includes/customizer.php:395
 msgid "Name"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:20 includes/customizer.php:344
+#: footer.php:20 includes/customizer.php:365
 msgid "Y"
 msgstr ""
 
@@ -189,11 +189,11 @@ msgstr ""
 msgid "Sidebar location:"
 msgstr ""
 
-#: includes/customizer.php:34 includes/customizer.php:400
+#: includes/customizer.php:34 includes/customizer.php:421
 msgid "Left"
 msgstr ""
 
-#: includes/customizer.php:35 includes/customizer.php:401
+#: includes/customizer.php:35 includes/customizer.php:422
 msgid "Right"
 msgstr ""
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Categories Order by:"
 msgstr ""
 
-#: includes/customizer.php:83 includes/customizer.php:375
+#: includes/customizer.php:83 includes/customizer.php:396
 #: includes/widgets/class-widget-current-nav.php:182
 #: includes/widgets/class-widget-current-nav.php:239
 msgid "ID"
@@ -227,13 +227,13 @@ msgstr ""
 msgid "Categories Order:"
 msgstr ""
 
-#: includes/customizer.php:96 includes/customizer.php:387
+#: includes/customizer.php:96 includes/customizer.php:408
 #: includes/widgets/class-widget-current-nav.php:190
 #: includes/widgets/class-widget-current-nav.php:251
 msgid "ASC"
 msgstr ""
 
-#: includes/customizer.php:97 includes/customizer.php:388
+#: includes/customizer.php:97 includes/customizer.php:409
 #: includes/widgets/class-widget-current-nav.php:252
 #: includes/widgets/class-widget-current-nav.php:258
 msgid "DESC"
@@ -302,68 +302,108 @@ msgid "Hide sidebar on mobile devices"
 msgstr ""
 
 #: includes/customizer.php:258
-msgid "Breadcrumb"
+msgid "Icon color for Sticky Post"
 msgstr ""
 
-#: includes/customizer.php:269
-msgid "Breadcrumb separator:"
-msgstr ""
-
-#: includes/customizer.php:272 includes/customizer.php:413
+#: includes/customizer.php:262 includes/customizer.php:293
+#: includes/customizer.php:434 includes/customizer.php:450
 #: includes/template-functions.php:99 includes/template-tags.php:363
 #: includes/template-tags.php:377
 msgid "Default"
 msgstr ""
 
-#: includes/customizer.php:273 includes/customizer.php:414
+#: includes/customizer.php:263 includes/customizer.php:451
+#: includes/template-tags.php:386
+msgid "Black"
+msgstr ""
+
+#: includes/customizer.php:264 includes/customizer.php:452
+#: includes/template-tags.php:384
+msgid "Light"
+msgstr ""
+
+#: includes/customizer.php:265 includes/customizer.php:453
+#: includes/template-tags.php:385
+msgid "Dark"
+msgstr ""
+
+#: includes/customizer.php:266 includes/customizer.php:454
+#: includes/template-tags.php:379
+msgid "Blue"
+msgstr ""
+
+#: includes/customizer.php:267 includes/customizer.php:455
+#: includes/template-tags.php:380
+msgid "Green"
+msgstr ""
+
+#: includes/customizer.php:268 includes/customizer.php:456
+#: includes/template-tags.php:381
+msgid "Yellow"
+msgstr ""
+
+#: includes/customizer.php:269 includes/customizer.php:457
+#: includes/template-tags.php:382
+msgid "Red"
+msgstr ""
+
+#: includes/customizer.php:279
+msgid "Breadcrumb"
+msgstr ""
+
+#: includes/customizer.php:290
+msgid "Breadcrumb separator:"
+msgstr ""
+
+#: includes/customizer.php:294 includes/customizer.php:435
 msgid "Arrow"
 msgstr ""
 
-#: includes/customizer.php:274 includes/customizer.php:415
+#: includes/customizer.php:295 includes/customizer.php:436
 msgid "Bullet"
 msgstr ""
 
-#: includes/customizer.php:275 includes/customizer.php:416
+#: includes/customizer.php:296 includes/customizer.php:437
 msgid "Dot"
 msgstr ""
 
-#: includes/customizer.php:276 includes/customizer.php:417
+#: includes/customizer.php:297 includes/customizer.php:438
 msgid "Succeeds"
 msgstr ""
 
-#: includes/customizer.php:284
+#: includes/customizer.php:305
 msgid "Media"
 msgstr ""
 
-#: includes/customizer.php:295
+#: includes/customizer.php:316
 msgid "Upload Main Image"
 msgstr ""
 
-#: includes/customizer.php:300 includes/customizer.php:317
+#: includes/customizer.php:321 includes/customizer.php:338
 msgid "Select Image"
 msgstr ""
 
-#: includes/customizer.php:301 includes/customizer.php:318
+#: includes/customizer.php:322 includes/customizer.php:339
 msgid "Remove Image"
 msgstr ""
 
-#: includes/customizer.php:302 includes/customizer.php:319
+#: includes/customizer.php:323 includes/customizer.php:340
 msgid "Change Image"
 msgstr ""
 
-#: includes/customizer.php:312
+#: includes/customizer.php:333
 msgid "Upload 404 Error Image"
 msgstr ""
 
-#: includes/customizer.php:326
+#: includes/customizer.php:347
 msgid "Footer"
 msgstr ""
 
-#: includes/customizer.php:339
+#: includes/customizer.php:360
 msgid "Footer Text"
 msgstr ""
 
-#: includes/customizer.php:341
+#: includes/customizer.php:362
 msgid "Enter custom footer text."
 msgstr ""
 
@@ -404,24 +444,24 @@ msgstr ""
 msgid "Per Page"
 msgstr ""
 
-#: includes/template-functions.php:117
+#: includes/template-functions.php:120
 msgid "Sorted"
 msgstr ""
 
-#: includes/template-functions.php:163
+#: includes/template-functions.php:166
 msgid "All"
 msgstr ""
 
-#: includes/template-functions.php:235
+#: includes/template-functions.php:238
 #, php-format
 msgid "%s ago"
 msgstr ""
 
-#: includes/template-functions.php:252
+#: includes/template-functions.php:255
 msgid "minute"
 msgstr ""
 
-#: includes/template-functions.php:254
+#: includes/template-functions.php:257
 msgid "minutes"
 msgstr ""
 
@@ -449,36 +489,8 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: includes/template-tags.php:379
-msgid "Blue"
-msgstr ""
-
-#: includes/template-tags.php:380
-msgid "Green"
-msgstr ""
-
-#: includes/template-tags.php:381
-msgid "Yellow"
-msgstr ""
-
-#: includes/template-tags.php:382
-msgid "Red"
-msgstr ""
-
 #: includes/template-tags.php:383
 msgid "White"
-msgstr ""
-
-#: includes/template-tags.php:384
-msgid "Light"
-msgstr ""
-
-#: includes/template-tags.php:385
-msgid "Dark"
-msgstr ""
-
-#: includes/template-tags.php:386
-msgid "Black"
 msgstr ""
 
 #: includes/template-tags.php:396
