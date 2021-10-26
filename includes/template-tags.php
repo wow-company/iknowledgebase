@@ -360,10 +360,10 @@ function iknowledgebase_menu_item_custom_fields( $item_id, $item ) {
 			<?php esc_attr_e( "Item Appearance", 'iknowledgebase' ); ?><br>
             <select name="iknowledgebase_menu_meta[<?php echo esc_attr( $item_id ); ?>][item-type]"
                     id="iknowledgebase-menu-meta-for-<?php echo esc_attr( $item_id ); ?>">
-                <option value="link" <?php selected( $item_type, 'link' ); ?>><?php esc_attr_e( "Default", 'iknowledgebase' ); ?></option>
-                <option value="button" <?php selected( $item_type, 'button' ); ?>><?php esc_attr_e( "Button", 'iknowledgebase' ); ?></option>
-                <option value="divider" <?php selected( $item_type, 'divider' ); ?>><?php esc_attr_e( "Divider", 'iknowledgebase' ); ?></option>
-                <option value="dropdown" <?php selected( $item_type, 'dropdown' ); ?>><?php esc_attr_e( "Dropdown right", 'iknowledgebase' ); ?></option>
+                <option value="link" <?php selected( $item_type, 'link' ); ?>><?php esc_html_e( "Default", 'iknowledgebase' ); ?></option>
+                <option value="button" <?php selected( $item_type, 'button' ); ?>><?php esc_html_e( "Button", 'iknowledgebase' ); ?></option>
+                <option value="divider" <?php selected( $item_type, 'divider' ); ?>><?php esc_html_e( "Divider", 'iknowledgebase' ); ?></option>
+                <option value="dropdown" <?php selected( $item_type, 'dropdown' ); ?>><?php esc_html_e( "Dropdown right", 'iknowledgebase' ); ?></option>
             </select>
         </label>
 
@@ -374,16 +374,16 @@ function iknowledgebase_menu_item_custom_fields( $item_id, $item ) {
 			<?php esc_attr_e( "Button Color", 'iknowledgebase' ); ?><br>
             <select name="iknowledgebase_menu_meta[<?php echo esc_attr( $item_id ); ?>][button-type]"
                     id="iknowledgebase-menu-type-button-for-<?php echo esc_attr( $item_id ); ?>">
-                <option value="" <?php selected( $button_type, '' ); ?>><?php esc_attr_e( "Default", 'iknowledgebase' ); ?></option>
-                <option value="is-primary" <?php selected( $button_type, 'is-primary' ); ?>><?php esc_attr_e( "Primary", 'iknowledgebase' ); ?></option>
-                <option value="is-info" <?php selected( $button_type, 'is-info' ); ?>><?php esc_attr_e( "Blue", 'iknowledgebase' ); ?></option>
-                <option value="is-success" <?php selected( $button_type, 'is-success' ); ?>><?php esc_attr_e( "Green", 'iknowledgebase' ); ?></option>
-                <option value="is-warning" <?php selected( $button_type, 'is-warning' ); ?>><?php esc_attr_e( "Yellow", 'iknowledgebase' ); ?></option>
-                <option value="is-danger" <?php selected( $button_type, 'is-danger' ); ?>><?php esc_attr_e( "Red", 'iknowledgebase' ); ?></option>
-                <option value="is-white" <?php selected( $button_type, 'is-white' ); ?>><?php esc_attr_e( "White", 'iknowledgebase' ); ?></option>
-                <option value="is-light" <?php selected( $button_type, 'is-light' ); ?>><?php esc_attr_e( "Light", 'iknowledgebase' ); ?></option>
-                <option value="is-dark" <?php selected( $button_type, 'is-dark' ); ?>><?php esc_attr_e( "Dark", 'iknowledgebase' ); ?></option>
-                <option value="is-black" <?php selected( $button_type, 'is-black' ); ?>><?php esc_attr_e( "Black", 'iknowledgebase' ); ?></option>
+                <option value="" <?php selected( $button_type, '' ); ?>><?php esc_html_e( "Default", 'iknowledgebase' ); ?></option>
+                <option value="is-primary" <?php selected( $button_type, 'is-primary' ); ?>><?php esc_html_e( "Primary", 'iknowledgebase' ); ?></option>
+                <option value="is-info" <?php selected( $button_type, 'is-info' ); ?>><?php esc_html_e( "Blue", 'iknowledgebase' ); ?></option>
+                <option value="is-success" <?php selected( $button_type, 'is-success' ); ?>><?php esc_html_e( "Green", 'iknowledgebase' ); ?></option>
+                <option value="is-warning" <?php selected( $button_type, 'is-warning' ); ?>><?php esc_html_e( "Yellow", 'iknowledgebase' ); ?></option>
+                <option value="is-danger" <?php selected( $button_type, 'is-danger' ); ?>><?php esc_html_e( "Red", 'iknowledgebase' ); ?></option>
+                <option value="is-white" <?php selected( $button_type, 'is-white' ); ?>><?php esc_html_e( "White", 'iknowledgebase' ); ?></option>
+                <option value="is-light" <?php selected( $button_type, 'is-light' ); ?>><?php esc_html_e( "Light", 'iknowledgebase' ); ?></option>
+                <option value="is-dark" <?php selected( $button_type, 'is-dark' ); ?>><?php esc_html_e( "Dark", 'iknowledgebase' ); ?></option>
+                <option value="is-black" <?php selected( $button_type, 'is-black' ); ?>><?php esc_html_e( "Black", 'iknowledgebase' ); ?></option>
             </select>
         </label>
     </p>
