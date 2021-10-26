@@ -9056,7 +9056,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 /* Need for Theme */
 .sticky {
-  display: block;
+  display: inline-block;
 }
 
 /* Captions */

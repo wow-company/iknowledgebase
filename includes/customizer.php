@@ -249,6 +249,27 @@ function iknowledgebase_customize_register( $wp_customize ) {
 		'type'    => 'checkbox',
 	) );
 
+	$wp_customize->add_setting( 'iknowledgebase_settings_sticky_icon_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'iknowledgebase_sanitize_default_colors',
+	) );
+
+	$wp_customize->add_control( 'iknowledgebase_settings_sticky_icon_color', array(
+		'label'   => esc_attr__( 'Icon color for Sticky Post', 'iknowledgebase' ),
+		'section' => 'iknowledgebase_posts_settings',
+		'type'    => 'select',
+		'choices' => array(
+			''                 => esc_attr__( 'Default', 'iknowledgebase' ),
+			'has-text-black'   => esc_attr__( 'Black', 'iknowledgebase' ),
+			'has-text-light'   => esc_attr__( 'Light', 'iknowledgebase' ),
+			'has-text-dark'    => esc_attr__( 'Dark', 'iknowledgebase' ),
+			'has-text-info'    => esc_attr__( 'Blue', 'iknowledgebase' ),
+			'has-text-success' => esc_attr__( 'Green', 'iknowledgebase' ),
+			'has-text-warning' => esc_attr__( 'Yellow', 'iknowledgebase' ),
+			'has-text-danger'  => esc_attr__( 'Red', 'iknowledgebase' ),
+		),
+	) );
+
 
 	//endregion
 
@@ -415,6 +436,25 @@ function iknowledgebase_sanitize_breadcrumb_separators( $input ) {
 		'bullet'   => esc_attr__( 'Bullet', 'iknowledgebase' ),
 		'dot'      => esc_attr__( 'Dot', 'iknowledgebase' ),
 		'succeeds' => esc_attr__( 'Succeeds', 'iknowledgebase' )
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	} else {
+		return '';
+	}
+}
+
+function iknowledgebase_sanitize_default_colors( $input ) {
+	$valid = array(
+		''                 => esc_attr__( 'Default', 'iknowledgebase' ),
+		'has-text-black'   => esc_attr__( 'Black', 'iknowledgebase' ),
+		'has-text-light'   => esc_attr__( 'Light', 'iknowledgebase' ),
+		'has-text-dark'    => esc_attr__( 'Dark', 'iknowledgebase' ),
+		'has-text-info'    => esc_attr__( 'Blue', 'iknowledgebase' ),
+		'has-text-success' => esc_attr__( 'Green', 'iknowledgebase' ),
+		'has-text-warning' => esc_attr__( 'Yellow', 'iknowledgebase' ),
+		'has-text-danger'  => esc_attr__( 'Red', 'iknowledgebase' ),
 	);
 
 	if ( array_key_exists( $input, $valid ) ) {

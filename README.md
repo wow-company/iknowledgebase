@@ -29,6 +29,7 @@ iknowledgebase is distributed under the terms of the GNU GPL
 
 ## Changelog
 #### = 1.1.1 =
+* Added: Sticky Post in categories
 * Fixed: minor bugs
 
 #### = 1.1 =
