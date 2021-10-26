@@ -28,6 +28,9 @@ iknowledgebase WordPress Theme, Copyright 2021 Wow-Company & Dmytro Lobov
 iknowledgebase is distributed under the terms of the GNU GPL
 
 ## Changelog
+#### = 1.1.1 =
+* Fixed: minor bugs
+
 #### = 1.1 =
 * Added: menu item type: Button, Divider, Dropdown right
 * Added: section 'Archives' in 'Customize' -> 'Theme Options'
