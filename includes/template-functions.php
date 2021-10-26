@@ -106,9 +106,12 @@ function iknowledgebase_posts_sorter() {
 	$iknowledgebase_settings = get_option( 'iknowledgebase_settings', false );
 	$sidebar                 = $iknowledgebase_settings['archive_sidebar'] ?? '';
 
-	$category = ! empty( $_GET['category'] ) ? absint( $_GET['category'] ) : 0;
-	$term_id = get_queried_object()->term_id;
-	$children = get_term_children( $term_id, 'category' );
+	if($sidebar && is_category()) {
+		$category = ! empty( $_GET['category'] ) ? absint( $_GET['category'] ) : 0;
+		$term_id = get_queried_object()->term_id;
+		$children = get_term_children( $term_id, 'category' );
+    }
+
 
 	?>
     <form method="get" id="order" class="level is-mobile">
@@ -123,7 +126,7 @@ function iknowledgebase_posts_sorter() {
                             <select name="select" class="" onchange="this.form.submit();">
 								<?php
 								foreach ( $sorter_arr as $key => $val ) {
-									echo '<option value="' . esc_attr( $key ) . '" ' . selected( $key, $sorterby, false ) . '>' . esc_attr( $val ) . '</option>';
+									echo '<option value="' . esc_attr( $key ) . '" ' . selected( $key, $sorterby, false ) . '>' . esc_html( $val ) . '</option>';
 								}
 								?>
                             </select>
@@ -139,7 +142,7 @@ function iknowledgebase_posts_sorter() {
                             <select name="per_page" class="" onchange="this.form.submit();">
 								<?php
 								foreach ( $posts_arr as $key => $val ) {
-									echo '<option value="' . esc_attr( $key ) . '" ' . selected( $key, $posts, false ) . '>' . esc_attr( $val ) . '</option>';
+									echo '<option value="' . esc_attr( $key ) . '" ' . selected( $key, $posts, false ) . '>' . esc_html( $val ) . '</option>';
 								}
 								?>
                             </select>
@@ -161,7 +164,7 @@ function iknowledgebase_posts_sorter() {
 									<?php
 									foreach ( $children as $key => $val ) {
 									    $name = empty($val) ? esc_attr__('All', 'iknowledgebase') : get_cat_name( $val );
-										echo '<option value="' . absint( $val ) . '" ' . selected( $val, $category, false ) . '>' . esc_attr( $name ) . '</option>';
+										echo '<option value="' . absint( $val ) . '" ' . selected( $val, $category, false ) . '>' . esc_html( $name ) . '</option>';
 									}
 									?>
                                 </select>
