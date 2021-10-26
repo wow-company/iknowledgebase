@@ -67,17 +67,17 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 				</p>
 
 				<p>
-					<a href="https://wow-company.com/iknowledgebase/"
+					<a href="https://themes.wow-company.com/iknowledgebase/"
 					   target="_blank"><?php esc_html_e( 'Theme Demo', 'iknowledgebase' ); ?></a>
 				</p>
 
 				<p>
-					<a href="https://wow-company.com/iknowledge/"
+					<a href="https://themes.wow-company.com/iknowledgebasepro/"
 					   target="_blank"><?php esc_html_e( 'Theme Demo PRO version', 'iknowledgebase' ); ?></a>
 				</p>
 
 				<p>
-					<a href="https://wow-company.com/knowledge-base/themes/iknowledgebase-documentation/" target="_blank">
+					<a href="https://docs.wow-company.com/category/themes/iknowledgebase/" target="_blank">
 						<?php esc_html_e( 'Theme Documentation', 'iknowledgebase' ); ?>
 					</a>
 				</p>
