@@ -28,6 +28,14 @@ iknowledgebase WordPress Theme, Copyright 2021 Wow-Company & Dmytro Lobov
 iknowledgebase is distributed under the terms of the GNU GPL
 
 ## Changelog
+
+#### = 1.2 =
+* Added: filter function for tabs on Home page
+* Added: option for remove logo
+* Fixed: sticky posts in category page and widget
+* Fixed: translation
+
+
 #### = 1.1.2 =
 * Fixed category loop
 

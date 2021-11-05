@@ -26,7 +26,7 @@ $iknowledgebase_settings = get_option( 'iknowledgebase_settings', false );
 					<?php if ( have_posts() ) : ?>
                         <div class="panel has-background-white">
 							<?php
-
+							iknowledgebase_get_sticky_posts_in_category();
 							// Load posts loop.
 							while ( have_posts() ) {
 								the_post();
@@ -55,11 +55,15 @@ $iknowledgebase_settings = get_option( 'iknowledgebase_settings', false );
                 </div>
 				<?php if ( have_posts() ) : ?>
                     <div class="panel has-background-white">
-                        <p class="panel-heading"><?php the_archive_title(); ?></p>
+                        <h2 class="panel-heading"><?php the_archive_title(); ?></h2>
 						<?php
+						iknowledgebase_get_sticky_posts_in_category();
 						// Load posts loop.
 						while ( have_posts() ) {
 							the_post();
+							if( is_sticky() ){
+							    continue;
+							}
 							get_template_part( 'template-parts/content', 'list' );
 						}
 						?>

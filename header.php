@@ -21,17 +21,7 @@
          aria-label="<?php esc_attr_e( 'Main Navigation', 'iknowledgebase' ); ?>">
         <div class="container">
             <div class="navbar-brand">
-				<?php if ( has_custom_logo() ) :
-					the_custom_logo();
-					?><?php else : ?>
-                    <a class="navbar-item" href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                       title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                        <span class="navbar-item has-text-info has-text-orbitron">
-                            <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-                        </span>
-                    </a>
-				<?php endif; ?>
-
+				<?php iknowledgebase_brand(); ?>
                 <a href="#" role="button" class="navbar-burger burger" id="navigation-burger"
                    aria-label="<?php esc_attr_e( 'Menu', 'iknowledgebase' ); ?>" aria-expanded="false"
                    data-target="main-menu" <?php iknowledgebase_amp_menu_toggle(); ?>>

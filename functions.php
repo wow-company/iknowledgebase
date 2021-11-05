@@ -7,7 +7,7 @@
 
 if ( ! defined( 'IKNOWLEDGEBASE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'IKNOWLEDGEBASE_VERSION', '1.1.2' );
+	define( 'IKNOWLEDGEBASE_VERSION', '1.2' );
 }
 
 // Theme setup

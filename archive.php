@@ -20,7 +20,7 @@ get_header();
                     </div>
 					<?php if ( have_posts() ) : ?>
                         <div class="panel has-background-white">
-	                        <p class="panel-heading"><?php the_archive_title(); ?></p>
+	                        <h2 class="panel-heading"><?php the_archive_title(); ?></h2>
 							<?php
 
 							// Load posts loop.

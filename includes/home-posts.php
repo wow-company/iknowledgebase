@@ -55,11 +55,13 @@ function iknowledgebase_get_home_posts() {
 function iknowledgebase_home_panel_tabs( $cat_ID ) {
 
 
-	$elements = array(
+	$tabs = array(
 		'subcats'       => esc_attr__( 'Subcategories', 'iknowledgebase' ),
 		'date'          => esc_attr__( 'New', 'iknowledgebase' ),
 		'comment_count' => esc_attr__( 'Popular', 'iknowledgebase' ),
 	);
+
+	$elements = apply_filters( 'iknowledgebase_home_panel_tabs', $tabs );
 
 	$child_cats = get_categories( array(
 		'parent' => $cat_ID,
@@ -81,6 +83,8 @@ function iknowledgebase_home_panel_tabs( $cat_ID ) {
 		$i ++;
 	}
 	$header .= '</p>';
+
+	$header = ( count( $elements ) > 1 ) ? $header : '';
 
 	$content = '';
 

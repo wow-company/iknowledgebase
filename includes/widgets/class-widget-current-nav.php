@@ -206,10 +206,11 @@ class iknowledgebase_Widget_Current_Nav extends WP_Widget {
 			'order'       => 'DESC',
 		);
 
-		$args          = wp_parse_args( $post_arg, $defaults );
-		$posts         = get_posts( $args );
-		$current_color = get_theme_mod( 'iknowledgebase_widget_current_color', 'has-background-primary' );
-		$out           = '';
+		$args              = wp_parse_args( $post_arg, $defaults );
+		$posts             = get_posts( $args );
+		$sticky_icon_color = get_theme_mod( 'iknowledgebase_settings_sticky_icon_color', '' );
+		$sticky_icon_color = ! empty( $sticky_icon_color ) ? ' ' . $sticky_icon_color : '';
+		$out               = '';
 		if ( $posts ) {
 			$post_icon       = apply_filters( 'iknowledgebase_post_icon', 'icon-book' );
 			$current_post_id = get_the_ID();
@@ -221,7 +222,12 @@ class iknowledgebase_Widget_Current_Nav extends WP_Widget {
 				} else {
 					$out .= '<li><a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="is-radiusless is-size-7">';
 				}
-				$out .= '<span class="icon ' . esc_attr( $post_icon ) . '"></span>';
+				if ( is_sticky( $post->ID ) ) {
+					$out .= '<span class="icon ' . esc_attr( $post_icon . $sticky_icon_color ) . '"></span>';
+				} else {
+					$out .= '<span class="icon ' . esc_attr( $post_icon ) . '"></span>';
+				}
+
 				$out .= esc_attr( get_the_title( $post->ID ) ) . '</a></li>';
 			}
 			wp_reset_postdata();

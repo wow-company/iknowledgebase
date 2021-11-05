@@ -5,6 +5,29 @@
  * @package iknowledgebase
  */
 
+function iknowledgebase_brand() {
+	$option = get_option( 'iknowledgebase_settings', '' );
+
+	if ( ! empty( $option['menu_hide_logo'] ) ) {
+		return;
+	}
+
+	if ( has_custom_logo() ) {
+		the_custom_logo();
+	} else {
+		?>
+        <a class="navbar-item" href="<?php echo esc_url( home_url( '/' ) ); ?>"
+           title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+            <span class="navbar-item brand-name">
+                <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+            </span>
+        </a>
+		<?php
+	}
+
+}
+
+
 // Custom page navigation
 function iknowledgebase_the_posts_pagination() {
 	$args = array(
@@ -106,11 +129,11 @@ function iknowledgebase_posts_sorter() {
 	$iknowledgebase_settings = get_option( 'iknowledgebase_settings', false );
 	$sidebar                 = $iknowledgebase_settings['archive_sidebar'] ?? '';
 
-	if($sidebar && is_category()) {
+	if ( $sidebar && is_category() ) {
 		$category = ! empty( $_GET['category'] ) ? absint( $_GET['category'] ) : 0;
-		$term_id = get_queried_object()->term_id;
+		$term_id  = get_queried_object()->term_id;
 		$children = get_term_children( $term_id, 'category' );
-    }
+	}
 
 
 	?>
@@ -151,7 +174,7 @@ function iknowledgebase_posts_sorter() {
                 </div>
             </div>
 
-			<?php if ( $sidebar && is_category() && $children) :
+			<?php if ( $sidebar && is_category() && $children ) :
 
 				array_unshift( $children, '0' );
 				?>
@@ -163,7 +186,7 @@ function iknowledgebase_posts_sorter() {
                                 <select name="category" class="" onchange="this.form.submit();">
 									<?php
 									foreach ( $children as $key => $val ) {
-									    $name = empty($val) ? esc_attr__('All', 'iknowledgebase') : get_cat_name( $val );
+										$name = empty( $val ) ? esc_attr__( 'All', 'iknowledgebase' ) : get_cat_name( $val );
 										echo '<option value="' . absint( $val ) . '" ' . selected( $val, $category, false ) . '>' . esc_html( $name ) . '</option>';
 									}
 									?>
@@ -205,7 +228,7 @@ function iknowledgebase_breadcrumbs() {
 	$separator        = get_theme_mod( 'iknowledgebase_breadcrumb_separators', '' );
 	$separators_class = ! empty( $separator ) ? ' has-' . esc_attr( $separator ) . '-separator' : '';
 	echo '<nav class="breadcrumb is-size-7 is-hidden-mobile' . esc_attr( $separators_class ) . '" aria-label="breadcrumbs"><ul>';
-	echo ' <li><a href="' . esc_url( home_url() ) . '"><span>' . esc_html( 'Home', 'iknowledgebase' ) . '</span></a></li>';
+	echo ' <li><a href="' . esc_url( home_url() ) . '"><span>' . esc_html__( 'Home', 'iknowledgebase' ) . '</span></a></li>';
 	if ( is_category() || is_tag() ) {
 		$object = get_queried_object();
 		if ( ! empty( $object->parent ) ) {
@@ -260,6 +283,44 @@ function iknowledgebase_reading_time() {
 	echo absint( $readingtime ) . ' ' . esc_attr( $timer );
 }
 
+// Get sticky post in category page
+function iknowledgebase_get_sticky_posts_in_category() {
+	$tax      = get_queried_object();
+	$cat_id   = ! empty( $_GET['category'] ) ? absint( $_GET['category'] ) : $tax->term_id;
+	$stickies = get_option( 'sticky_posts' );
+
+	$post_icon         = apply_filters( 'iknowledgebase_post_icon', 'icon-book' );
+	$sticky_icon_color = get_theme_mod( 'iknowledgebase_settings_sticky_icon_color', '' );
+	$sticky_icon_color = ! empty( $sticky_icon_color ) ? ' ' . $sticky_icon_color : '';
+
+	foreach ( $stickies as $sticky_id ) {
+		if ( in_category( $cat_id, $sticky_id ) || iknowledgebase_post_is_in_descendant_category( $cat_id, $sticky_id ) ) {
+			$title     = get_the_title( $sticky_id );
+			$permalink = get_the_permalink( $sticky_id ); ?>
+            <a class="panel-block is-borderless" href="<?php echo esc_url( $permalink ); ?>">
+                <span class="panel-icon<?php echo esc_attr( $sticky_icon_color ); ?>">
+                    <span class="<?php echo esc_attr( $post_icon ); ?>"></span>
+                </span>
+                <h4><?php echo esc_html( $title ); ?></h4>
+            </a>
+			<?php
+		}
+	}
+}
+
+
+// Checking whether a post belongs to the current or nested category
+function iknowledgebase_post_is_in_descendant_category( $cats, $_post = null ) {
+	foreach ( (array) $cats as $cat ) {
+		// get_term_children() accepts integer ID only
+		$descendants = get_term_children( (int) $cat, 'category' );
+		if ( $descendants && in_category( $descendants, $_post ) ) {
+			return true;
+		}
+	}
+
+	return false;
+}
 
 /**
  * Checks if AMP page is rendered.
@@ -290,3 +351,4 @@ function iknowledgebase_amp_menu_is_toggled() {
 		echo "[class]=\"'navbar-menu' + ( mainMenuExpanded ? ' is-active' : '' )\"";
 	}
 }
+

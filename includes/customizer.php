@@ -180,6 +180,18 @@ function iknowledgebase_customize_register( $wp_customize ) {
 		'type'    => 'checkbox',
 	) );
 
+	$wp_customize->add_setting( 'iknowledgebase_settings[menu_hide_logo]', array(
+		'capability'        => 'edit_theme_options',
+		'type'              => 'option',
+		'default'           => 0,
+		'sanitize_callback' => 'iknowledgebase_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'iknowledgebase_settings[menu_hide_logo]', array(
+		'label'   => esc_attr__( 'Hide Logo', 'iknowledgebase' ),
+		'section' => 'iknowledgebase_navbar',
+		'type'    => 'checkbox',
+	) );
 
 	//endregion
 
