@@ -3,7 +3,7 @@ Contributors: Wpcalc
 Tags: blog, education, entertainment, two-columns, right-sidebar, custom-logo, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
 Requires at least: 5.4
 Tested up to: 5.8
-Stable tag: 1.1.2
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://wow-estore.com/
