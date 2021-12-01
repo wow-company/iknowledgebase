@@ -22,7 +22,7 @@ $sidebar_hide = !empty($iknowledgebase_settings['post_hide_sidebar']) ? ' is-hid
             <div class="column is-full-touch<?php echo esc_attr($sidebar_hide);?>"><?php get_sidebar(); ?></div>
             <div class="column is-full-touch is-two-thirds-desktop">
 	            <?php while ( have_posts() ) : the_post(); ?>
-		            <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+		            <?php get_template_part( 'template-parts/content', 'post' ); ?>
 		            <?php
 		            // If comments are open or we have at least one comment, load up the comment template
 		            if ( comments_open() || '0' != get_comments_number() ) :

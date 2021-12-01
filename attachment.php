@@ -17,7 +17,7 @@ get_header();
     <div class="container">
         <div class="is-max-w-full mx-auto content pt-5">
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+				<?php get_template_part( 'template-parts/content', 'attachment' ); ?>
 				<?php
 				// If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || '0' != get_comments_number() ) :
