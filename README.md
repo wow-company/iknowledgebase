@@ -29,6 +29,9 @@ iknowledgebase is distributed under the terms of the GNU GPL
 
 ## Changelog
 
+#### = 1.2.1 =
+* Fixed: issue with the custom post template
+
 #### = 1.2 =
 * Added: filter function for tabs on Home page
 * Added: option for remove logo
