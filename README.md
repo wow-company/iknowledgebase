@@ -28,6 +28,8 @@ iknowledgebase WordPress Theme, Copyright 2021 Wow-Company & Dmytro Lobov
 iknowledgebase is distributed under the terms of the GNU GPL
 
 ## Changelog
+#### = 1.2.2 =
+* Fixed: grammatical error in the main search bar.
 
 #### = 1.2.1 =
 * Fixed: issue with the custom post template
