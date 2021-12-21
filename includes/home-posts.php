@@ -33,6 +33,9 @@ function iknowledgebase_get_home_posts() {
 
 	$out = '';
 	foreach ( $categories as $cat ) {
+
+		$count = iknowledgebase_total_cat_post_count($cat->cat_ID);
+
 		$cat_icon = apply_filters( 'iknowledgebase_category_icon', 'icon-folder-open', $cat->cat_ID );
 
 		$out .= '<div class="column is-4-widescreen is-6-desktop is-12-touch">';
@@ -42,13 +45,29 @@ function iknowledgebase_get_home_posts() {
 		$out .= '<div class="level-item has-text-primary"><span class="' . esc_attr( $cat_icon ) . '"></span></div>';
 		$out .= '<div class="level-item"><h2 class="title is-5">' . esc_attr( $cat->name ) . '</h2></div>';
 		$out .= '</div>';
-		$out .= '<div class="level-right"><span class="tag is-white has-text-primary">' . absint( $cat->count ) . '</span></div>';
+		$out .= '<div class="level-right"><span class="tag is-white has-text-primary">' . absint( $count ) . '</span></div>';
 		$out .= '</div>';
 		$out .= iknowledgebase_home_panel_tabs( $cat->cat_ID );
 		$out .= '</div>';
 		$out .= '</div>';
 	}
 	echo $out;
+}
+
+function iknowledgebase_total_cat_post_count( $cat_id ) {
+	$q = new WP_Query( array(
+		'nopaging' => true,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'id',
+				'terms' => $cat_id,
+				'include_children' => true,
+			),
+		),
+		'fields' => 'ids',
+	) );
+	return $q->post_count;
 }
 
 

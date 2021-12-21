@@ -14,5 +14,6 @@ $post_icon = apply_filters( 'iknowledgebase_post_icon', 'icon-book' );
     <span class="panel-icon">
         <span class="<?php echo esc_attr( $post_icon ); ?>"></span>
     </span>
+    <?php do_action( 'iknowledgebase_post_time');?>
     <h4><?php the_title(); ?></h4>
 </a>

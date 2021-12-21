@@ -301,6 +301,7 @@ function iknowledgebase_get_sticky_posts_in_category() {
                 <span class="panel-icon<?php echo esc_attr( $sticky_icon_color ); ?>">
                     <span class="<?php echo esc_attr( $post_icon ); ?>"></span>
                 </span>
+	            <?php do_action( 'iknowledgebase_post_time');?>
                 <h4><?php echo esc_html( $title ); ?></h4>
             </a>
 			<?php

@@ -79,8 +79,9 @@ function iknowledgebase_customize_register( $wp_customize ) {
 		'label'   => esc_attr__( 'Categories Order by:', 'iknowledgebase' ),
 		'section' => 'iknowledgebase_home_settings',
 		'choices' => array(
-			'name' => esc_attr__( 'Name', 'iknowledgebase' ),
-			'ID'   => esc_attr__( 'ID', 'iknowledgebase' ),
+			'name'    => esc_attr__( 'Name', 'iknowledgebase' ),
+			'id'      => esc_attr__( 'ID', 'iknowledgebase' ),
+			'include' => esc_attr__( 'In the order specified in "Include Categories"', 'iknowledgebase' ),
 		),
 	) );
 
@@ -404,8 +405,9 @@ function iknowledgebase_sanitize_number( $number, $setting ) {
 
 function iknowledgebase_sanitize_cat_orderby( $input ) {
 	$valid = array(
-		'name' => esc_attr__( 'Name', 'iknowledgebase' ),
-		'ID'   => esc_attr__( 'ID', 'iknowledgebase' ),
+		'name'    => esc_attr__( 'Name', 'iknowledgebase' ),
+		'id'      => esc_attr__( 'ID', 'iknowledgebase' ),
+		'include' => esc_attr__( 'In the order specified in "Include Categories"', 'iknowledgebase' ),
 	);
 
 	if ( array_key_exists( $input, $valid ) ) {

@@ -3,7 +3,7 @@ Contributors: Wpcalc
 Tags: blog, education, entertainment, two-columns, right-sidebar, custom-logo, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
 Requires at least: 5.4
 Tested up to: 5.8
-Stable tag: 1.2.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://wow-estore.com/
@@ -35,6 +35,10 @@ iknowledgebase WordPress Theme, Copyright 2021 Wow-Company & Dmytro Lobov
 iknowledgebase is distributed under the terms of the GNU GPL
 
 == Changelog ==
+#### = 1.3 =
+* Added: Sorted category on homepage by parameter include
+* Fixed: Sorted category by id
+
 #### = 1.2.2 =
 * Fixed: grammatical error in the main search bar.
 
