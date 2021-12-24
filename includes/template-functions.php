@@ -5,6 +5,29 @@
  * @package iknowledgebase
  */
 
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ *
+ * @return array
+ */
+function iknowledgebase_body_classes( $classes ) {
+	$option = get_option( 'iknowledgebase_settings', '' );
+
+	if ( ! empty( $option['menu_fixed'] ) ) {
+		$classes[] = 'has-navbar-fixed-top';
+		if ( empty( $option['menu_space'] ) ) {
+			$classes[] = 'has-spaced-navbar-fixed-top';
+		}
+	}
+
+	return $classes;
+}
+
+add_filter( 'body_class', 'iknowledgebase_body_classes' );
+
 function iknowledgebase_brand() {
 	$option = get_option( 'iknowledgebase_settings', '' );
 
@@ -301,7 +324,7 @@ function iknowledgebase_get_sticky_posts_in_category() {
                 <span class="panel-icon<?php echo esc_attr( $sticky_icon_color ); ?>">
                     <span class="<?php echo esc_attr( $post_icon ); ?>"></span>
                 </span>
-	            <?php do_action( 'iknowledgebase_post_time');?>
+				<?php do_action( 'iknowledgebase_post_time' ); ?>
                 <h4><?php echo esc_html( $title ); ?></h4>
             </a>
 			<?php

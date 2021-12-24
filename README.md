@@ -28,6 +28,13 @@ iknowledgebase WordPress Theme, Copyright 2021 Wow-Company & Dmytro Lobov
 iknowledgebase is distributed under the terms of the GNU GPL
 
 ## Changelog
+#### = 1.3.1 =
+* Fixed: option 'Fixed Menu'
+
+#### = 1.3 =
+* Added: Sorted category on homepage by parameter include
+* Fixed: Sorted category by id
+
 #### = 1.2.2 =
 * Fixed: grammatical error in the main search bar.
 
