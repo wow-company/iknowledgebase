@@ -7,7 +7,7 @@
 
 if ( ! defined( 'IKNOWLEDGEBASE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'IKNOWLEDGEBASE_VERSION', '1.3.1' );
+	define( 'IKNOWLEDGEBASE_VERSION', '1.3.2' );
 }
 
 // Theme setup
@@ -23,6 +23,8 @@ if ( ! function_exists( 'iknowledgebase_setup' ) ) :
 		add_theme_support( 'custom-logo', array() );
 		add_post_type_support( 'page', 'excerpt' );
 		add_theme_support( 'post-thumbnails' );
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'iknowledgebase_custom_background_args', array( 'default-color' => 'ffffff' ) ) );
 
 		register_nav_menus( array(
 			'start-nav'   => esc_attr__( 'Left Main Menu', 'iknowledgebase' ),
