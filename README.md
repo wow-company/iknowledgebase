@@ -28,6 +28,9 @@ iknowledgebase WordPress Theme, Copyright 2021 Wow-Company & Dmytro Lobov
 iknowledgebase is distributed under the terms of the GNU GPL
 
 ## Changelog
+#### = 1.3.3 =
+* Fixed: minor bug with sidebar
+
 #### = 1.3.2 =
 * Added: option 'Customize'-> 'Background Image'
 

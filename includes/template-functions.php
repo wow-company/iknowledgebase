@@ -114,11 +114,11 @@ function iknowledgebase_go_filter() {
 	$args['posts_per_page'] = $posts_per_page;
 
 	$iknowledgebase_settings = get_option( 'iknowledgebase_settings', false );
-	$sidebar                 = $iknowledgebase_settings['archive_sidebar'];
+
 
 	$category = ! empty( $_GET['category'] ) ? absint( $_GET['category'] ) : 0;
 
-	if ( $sidebar && is_category() && ! empty( $category ) ) {
+	if ( !empty($iknowledgebase_settings['archive_sidebar']) && is_category() && ! empty( $category ) ) {
 		$args['cat'] = $category;
 	}
 
