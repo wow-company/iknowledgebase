@@ -204,7 +204,11 @@ class iknowledgebase_Widget_Current_Nav extends WP_Widget {
 			'category'    => $cat_ID,
 			'orderby'     => 'date',
 			'order'       => 'DESC',
+            'post_status' => ['publish'],
 		);
+		if (is_user_logged_in() && current_user_can('read_private_posts')) {
+			$defaults['post_status'][] = 'private';
+		}
 
 		$args              = wp_parse_args( $post_arg, $defaults );
 		$posts             = get_posts( $args );

@@ -7,7 +7,7 @@
 
 if ( ! defined( 'IKNOWLEDGEBASE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'IKNOWLEDGEBASE_VERSION', '1.3.3' );
+	define( 'IKNOWLEDGEBASE_VERSION', '1.3.6' );
 }
 
 // Theme setup
@@ -51,7 +51,11 @@ function iknowledgebase_scripts() {
 	$template_uri = get_template_directory_uri();
 
 	wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Raleway:wght@400;700&display=swap' );
-	wp_enqueue_style( 'iknowledgebase', $template_uri . '/assets/css/style' . $pre_suffix . '.css', '', IKNOWLEDGEBASE_VERSION );
+	if ( is_rtl() ) {
+		wp_enqueue_style( 'iknowledgebase', $template_uri . '/assets/css/style-rtl' . $pre_suffix . '.css', '', IKNOWLEDGEBASE_VERSION );
+	} else {
+		wp_enqueue_style( 'iknowledgebase', $template_uri . '/assets/css/style' . $pre_suffix . '.css', '', IKNOWLEDGEBASE_VERSION );
+	}
 
 
 	$custom_css = apply_filters( 'iknowledgebase_extra_css', '' );
